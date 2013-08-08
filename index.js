@@ -33,9 +33,9 @@
         return aftered;
       }
     },
-    around: function() {
+    around: function(wrapped, fn) {
       return function() {
-        var args = [].slice.call(arguments).unshift(wrapped.bind(this));
+        var args = slice.call(arguments).unshift(wrapped.bind(this));
         return fn.apply(this, args);
       }
     }
