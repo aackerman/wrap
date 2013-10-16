@@ -11,11 +11,8 @@
     "sinon": "~1.7.3",
     "sinon-chai": "~2.4.0"
   },
-  "devDependencies": {
-    "coffee-script": "~1.6.3"
-  },
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
