@@ -1,4 +1,5 @@
 ## wrap
+[![Build Status](https://travis-ci.org/aackerman/wrap.png?branch=master)](https://travis-ci.org/aackerman/wrap)
 
 wrap before, after, and around JS functions
 
