@@ -8,11 +8,11 @@ describe("#before", function(){
     var fn      = wrap.before(wrapped, spy1);
     fn();
 
-    spy1.should.have.been.calledOnce;
-    wrapped.should.have.been.calledOnce;
+    expect(spy1).to.have.been.calledOnce;
+    expect(wrapped).to.have.been.calledOnce;
 
-    spy1.should.have.been.calledBefore(wrapped);
-    wrapped.should.have.been.calledAfter(spy1);
+    expect(spy1).to.have.been.calledBefore(wrapped);
+    expect(wrapped).to.have.been.calledAfter(spy1);
   });
 
   it("should be allowed to be wrapped several times", function(){
@@ -24,10 +24,10 @@ describe("#before", function(){
 
     fn2();
 
-    spy1.should.have.been.calledBefore(wrapped);
-    spy2.should.have.been.calledBefore(spy1);
-    wrapped.should.have.been.calledAfter(spy1);
-    wrapped.should.have.been.calledAfter(spy2);
+    expect(spy1).to.have.been.calledBefore(wrapped);
+    expect(spy2).to.have.been.calledBefore(spy1);
+    expect(wrapped).to.have.been.calledAfter(spy1);
+    expect(wrapped).to.have.been.calledAfter(spy2);
   });
 
   it("should accept a variable number of before callbacks", function(){
@@ -37,10 +37,10 @@ describe("#before", function(){
     var fn      = wrap.before(wrapped, spy1, spy2);
     fn();
 
-    spy1.should.have.been.calledBefore(wrapped);
-    spy2.should.have.been.calledAfter(spy1);
-    wrapped.should.have.been.calledAfter(spy1);
-    wrapped.should.have.been.calledAfter(spy2);
+    expect(spy1).to.have.been.calledBefore(wrapped);
+    expect(spy2).to.have.been.calledAfter(spy1);
+    expect(wrapped).to.have.been.calledAfter(spy1);
+    expect(wrapped).to.have.been.calledAfter(spy2);
   });
 });
 
@@ -51,11 +51,11 @@ describe('#after', function(){
     var fn      = wrap.after(wrapped, spy1);
     fn();
 
-    spy1.should.have.been.calledOnce;
-    wrapped.should.have.been.calledOnce;
+    expect(spy1).to.have.been.calledOnce;
+    expect(wrapped).to.have.been.calledOnce;
 
-    spy1.should.have.been.calledAfter(wrapped);
-    wrapped.should.have.been.calledBefore(spy1);
+    expect(spy1).to.have.been.calledAfter(wrapped);
+    expect(wrapped).to.have.been.calledBefore(spy1);
   });
 
   it("should be allowed to be wrapped several times", function(){
@@ -67,10 +67,10 @@ describe('#after', function(){
 
     fn2();
 
-    spy1.should.have.been.calledAfter(wrapped);
-    spy2.should.have.been.calledAfter(spy1);
-    wrapped.should.have.been.calledBefore(spy1);
-    wrapped.should.have.been.calledBefore(spy2);
+    expect(spy1).to.have.been.calledAfter(wrapped);
+    expect(spy2).to.have.been.calledAfter(spy1);
+    expect(wrapped).to.have.been.calledBefore(spy1);
+    expect(wrapped).to.have.been.calledBefore(spy2);
   });
 
   it("should accept a variable number of before callbacks", function(){
@@ -80,9 +80,9 @@ describe('#after', function(){
     var fn      = wrap.after(wrapped, spy1, spy2);
     fn();
 
-    spy1.should.have.been.calledAfter(wrapped);
-    spy2.should.have.been.calledAfter(spy1);
-    wrapped.should.have.been.calledBefore(spy1);
-    wrapped.should.have.been.calledBefore(spy2);
+    expect(spy1).to.have.been.calledAfter(wrapped);
+    expect(spy2).to.have.been.calledAfter(spy1);
+    expect(wrapped).to.have.been.calledBefore(spy1);
+    expect(wrapped).to.have.been.calledBefore(spy2);
   });
 });
